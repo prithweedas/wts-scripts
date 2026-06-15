@@ -1,0 +1,18 @@
+{
+  "name": "scratchpads",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "branch-cleanup": "node stale-branches.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
+  "dependencies": {
+    "@octokit/rest": "^22.0.1"
+  }
+}

@@ -1,0 +1,1226 @@
+{
+  "runId": "2026-05-23T10-53-14-804Z",
+  "owner": "142w57th",
+  "repo": "wts-systems",
+  "mode": "read",
+  "startedAt": "2026-05-23T10:53:14.805Z",
+  "generatedAt": "2026-05-23T10:53:24.097Z",
+  "cutoffDate": "2026-02-23T09:53:14.805Z",
+  "months": 3,
+  "defaultBranchName": "dev",
+  "prDetectionMethod": "repository_pull_requests_by_head_ref",
+  "pullRequestScan": {
+    "prDetectionMethod": "repository_pull_requests_by_head_ref",
+    "openPrCount": 75,
+    "draftOpenPrCount": 11
+  },
+  "totals": {
+    "branchCount": 970,
+    "staleBranchCount": 13,
+    "staleBranchesWithOpenPrCount": 12,
+    "staleBranchesWithDraftPrCount": 3,
+    "deleteEligibleCount": 1,
+    "skippedCount": 12
+  },
+  "staleBranches": [
+    {
+      "name": "bug/SOL-29-fixFormValidation",
+      "lastCommitSha": "ad7271db295b5952d6ef7c8a74d04365d4cac844",
+      "lastCommitDate": "2026-02-04T12:14:09Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/ad7271db295b5952d6ef7c8a74d04365d4cac844",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4629,
+          "title": "[SOL-29]: fixed onboarding form validation",
+          "url": "https://github.com/142w57th/wts-systems/pull/4629",
+          "state": "OPEN",
+          "isDraft": true,
+          "headRefName": "bug/SOL-29-fixFormValidation",
+          "headRefOid": "ad7271db295b5952d6ef7c8a74d04365d4cac844",
+          "headRepository": "142w57th/wts-systems",
+          "author": "Valovoy",
+          "createdAt": "2026-02-04T12:14:36Z",
+          "updatedAt": "2026-02-04T12:15:02Z"
+        }
+      ],
+      "hasDraftPr": true,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs",
+        "has_draft_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "bug/SOL-952-fixedClientSimelationScroll",
+      "lastCommitSha": "232d4d961165593ec6a36d4a169f93ed145d3df4",
+      "lastCommitDate": "2026-02-09T11:56:49Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/232d4d961165593ec6a36d4a169f93ed145d3df4",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4717,
+          "title": "[SOL-952]: fixed client simulation scroll",
+          "url": "https://github.com/142w57th/wts-systems/pull/4717",
+          "state": "OPEN",
+          "isDraft": true,
+          "headRefName": "bug/SOL-952-fixedClientSimelationScroll",
+          "headRefOid": "232d4d961165593ec6a36d4a169f93ed145d3df4",
+          "headRepository": "142w57th/wts-systems",
+          "author": "Valovoy",
+          "createdAt": "2026-02-09T09:24:28Z",
+          "updatedAt": "2026-02-09T11:57:40Z"
+        }
+      ],
+      "hasDraftPr": true,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs",
+        "has_draft_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "chore/singup-token-guard",
+      "lastCommitSha": "e8cd61b6dc70b68fd2823a1e2d9ac8b7bb9b69e4",
+      "lastCommitDate": "2026-02-12T16:10:44Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/e8cd61b6dc70b68fd2823a1e2d9ac8b7bb9b69e4",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4814,
+          "title": "added: signup token guard for client signup linking apis",
+          "url": "https://github.com/142w57th/wts-systems/pull/4814",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "chore/singup-token-guard",
+          "headRefOid": "e8cd61b6dc70b68fd2823a1e2d9ac8b7bb9b69e4",
+          "headRepository": "142w57th/wts-systems",
+          "author": "gunvantsr",
+          "createdAt": "2026-02-12T16:11:27Z",
+          "updatedAt": "2026-02-12T16:16:25Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "dev_change_kafka_config",
+      "lastCommitSha": "8766380dcd5493e41231ae217688cd9eb224e62b",
+      "lastCommitDate": "2026-02-16T23:16:05Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/8766380dcd5493e41231ae217688cd9eb224e62b",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4856,
+          "title": "Dev: Update lambda Kafka config",
+          "url": "https://github.com/142w57th/wts-systems/pull/4856",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "dev_change_kafka_config",
+          "headRefOid": "8766380dcd5493e41231ae217688cd9eb224e62b",
+          "headRepository": "142w57th/wts-systems",
+          "author": "doppelc",
+          "createdAt": "2026-02-16T23:25:02Z",
+          "updatedAt": "2026-03-31T13:40:30Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "feat/delete-account-script",
+      "lastCommitSha": "2d2d578e6bb1c78ddf9bade93ad026951c62719d",
+      "lastCommitDate": "2026-01-29T14:00:01Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/2d2d578e6bb1c78ddf9bade93ad026951c62719d",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4509,
+          "title": "feat: clean delete account from db",
+          "url": "https://github.com/142w57th/wts-systems/pull/4509",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "feat/delete-account-script",
+          "headRefOid": "2d2d578e6bb1c78ddf9bade93ad026951c62719d",
+          "headRepository": "142w57th/wts-systems",
+          "author": "gunvantsr",
+          "createdAt": "2026-01-29T14:01:05Z",
+          "updatedAt": "2026-01-29T14:01:27Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "feat/dev-merge/br-onboarding-model",
+      "lastCommitSha": "a21ba77419f2085574a7825bc1792ac6c2a80a76",
+      "lastCommitDate": "2026-02-20T20:50:22Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/a21ba77419f2085574a7825bc1792ac6c2a80a76",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4873,
+          "title": "Feat/dev merge/br onboarding model",
+          "url": "https://github.com/142w57th/wts-systems/pull/4873",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "feat/dev-merge/br-onboarding-model",
+          "headRefOid": "a21ba77419f2085574a7825bc1792ac6c2a80a76",
+          "headRepository": "142w57th/wts-systems",
+          "author": "DanyloPillar",
+          "createdAt": "2026-02-17T22:50:00Z",
+          "updatedAt": "2026-02-20T20:55:13Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "fix/onboarding-dto-bug",
+      "lastCommitSha": "5f0e447c54015809749093e3f71d4226b476e351",
+      "lastCommitDate": "2026-01-09T13:08:31Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/5f0e447c54015809749093e3f71d4226b476e351",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4069,
+          "title": "wip: fixing dto related tech debt",
+          "url": "https://github.com/142w57th/wts-systems/pull/4069",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "fix/onboarding-dto-bug",
+          "headRefOid": "5f0e447c54015809749093e3f71d4226b476e351",
+          "headRepository": "142w57th/wts-systems",
+          "author": "vikramk9852",
+          "createdAt": "2026-01-09T13:14:26Z",
+          "updatedAt": "2026-01-09T13:14:55Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "merge-dev/pebble/org-eneity-no-request-scope",
+      "lastCommitSha": "3a575ada65a5670bdf6bdcb61320b24a34443092",
+      "lastCommitDate": "2026-01-11T16:01:47Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/3a575ada65a5670bdf6bdcb61320b24a34443092",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4122,
+          "title": "Refactor org entity service to be singleton scoped",
+          "url": "https://github.com/142w57th/wts-systems/pull/4122",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "merge-dev/pebble/org-eneity-no-request-scope",
+          "headRefOid": "3a575ada65a5670bdf6bdcb61320b24a34443092",
+          "headRepository": "142w57th/wts-systems",
+          "author": "prithweedas",
+          "createdAt": "2026-01-13T05:10:04Z",
+          "updatedAt": "2026-01-13T05:10:39Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "pebble/org-eneity-no-request-scope",
+      "lastCommitSha": "3a575ada65a5670bdf6bdcb61320b24a34443092",
+      "lastCommitDate": "2026-01-11T16:01:47Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/3a575ada65a5670bdf6bdcb61320b24a34443092",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 0,
+      "openPrs": [],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [],
+      "deleteEligible": true
+    },
+    {
+      "name": "task/SOL-916",
+      "lastCommitSha": "b912dede23ac07065915e3965a66d19f3cb50255",
+      "lastCommitDate": "2026-01-28T17:38:28Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/b912dede23ac07065915e3965a66d19f3cb50255",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4481,
+          "title": "[SOL-916] Redirected old clients to new review page",
+          "url": "https://github.com/142w57th/wts-systems/pull/4481",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "task/SOL-916",
+          "headRefOid": "b912dede23ac07065915e3965a66d19f3cb50255",
+          "headRepository": "142w57th/wts-systems",
+          "author": "aryandev17",
+          "createdAt": "2026-01-28T17:38:58Z",
+          "updatedAt": "2026-01-28T17:39:57Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "task/account-advisor-mapping",
+      "lastCommitSha": "076441d3173d9e6219c7bd33ff461d80e719fb23",
+      "lastCommitDate": "2026-02-04T15:02:52Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/076441d3173d9e6219c7bd33ff461d80e719fb23",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4637,
+          "title": "Added advisor account mapping for onboarding",
+          "url": "https://github.com/142w57th/wts-systems/pull/4637",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "task/account-advisor-mapping",
+          "headRefOid": "076441d3173d9e6219c7bd33ff461d80e719fb23",
+          "headRepository": "142w57th/wts-systems",
+          "author": "aryandev17",
+          "createdAt": "2026-02-04T15:04:05Z",
+          "updatedAt": "2026-02-04T16:53:03Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "task/add-dd-traces-dev-merge",
+      "lastCommitSha": "049d7f4a7c3993fdc5a16a5cf5d9a95dab72f2ab",
+      "lastCommitDate": "2026-01-22T17:59:01Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/049d7f4a7c3993fdc5a16a5cf5d9a95dab72f2ab",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4350,
+          "title": "Task/add dd traces dev merge",
+          "url": "https://github.com/142w57th/wts-systems/pull/4350",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "task/add-dd-traces-dev-merge",
+          "headRefOid": "049d7f4a7c3993fdc5a16a5cf5d9a95dab72f2ab",
+          "headRepository": "142w57th/wts-systems",
+          "author": "aryandev17",
+          "createdAt": "2026-01-22T18:00:00Z",
+          "updatedAt": "2026-01-22T18:07:58Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "task/dynamic-onboarding-steps",
+      "lastCommitSha": "7be519d2f75f0d711986b3976e6620cb9bcd5a67",
+      "lastCommitDate": "2026-01-26T19:14:03Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/7be519d2f75f0d711986b3976e6620cb9bcd5a67",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4409,
+          "title": "[WIP] Conditional steps",
+          "url": "https://github.com/142w57th/wts-systems/pull/4409",
+          "state": "OPEN",
+          "isDraft": true,
+          "headRefName": "task/dynamic-onboarding-steps",
+          "headRefOid": "7be519d2f75f0d711986b3976e6620cb9bcd5a67",
+          "headRepository": "142w57th/wts-systems",
+          "author": "aryandev17",
+          "createdAt": "2026-01-26T19:14:33Z",
+          "updatedAt": "2026-05-23T10:52:09Z"
+        }
+      ],
+      "hasDraftPr": true,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs",
+        "has_draft_prs"
+      ],
+      "deleteEligible": false
+    }
+  ],
+  "deleteEligibleBranches": [
+    {
+      "name": "pebble/org-eneity-no-request-scope",
+      "lastCommitSha": "3a575ada65a5670bdf6bdcb61320b24a34443092",
+      "lastCommitDate": "2026-01-11T16:01:47Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/3a575ada65a5670bdf6bdcb61320b24a34443092",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 0,
+      "openPrs": [],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [],
+      "deleteEligible": true
+    }
+  ],
+  "staleBranchesWithOpenPrs": [
+    {
+      "name": "bug/SOL-29-fixFormValidation",
+      "lastCommitSha": "ad7271db295b5952d6ef7c8a74d04365d4cac844",
+      "lastCommitDate": "2026-02-04T12:14:09Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/ad7271db295b5952d6ef7c8a74d04365d4cac844",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4629,
+          "title": "[SOL-29]: fixed onboarding form validation",
+          "url": "https://github.com/142w57th/wts-systems/pull/4629",
+          "state": "OPEN",
+          "isDraft": true,
+          "headRefName": "bug/SOL-29-fixFormValidation",
+          "headRefOid": "ad7271db295b5952d6ef7c8a74d04365d4cac844",
+          "headRepository": "142w57th/wts-systems",
+          "author": "Valovoy",
+          "createdAt": "2026-02-04T12:14:36Z",
+          "updatedAt": "2026-02-04T12:15:02Z"
+        }
+      ],
+      "hasDraftPr": true,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs",
+        "has_draft_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "bug/SOL-952-fixedClientSimelationScroll",
+      "lastCommitSha": "232d4d961165593ec6a36d4a169f93ed145d3df4",
+      "lastCommitDate": "2026-02-09T11:56:49Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/232d4d961165593ec6a36d4a169f93ed145d3df4",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4717,
+          "title": "[SOL-952]: fixed client simulation scroll",
+          "url": "https://github.com/142w57th/wts-systems/pull/4717",
+          "state": "OPEN",
+          "isDraft": true,
+          "headRefName": "bug/SOL-952-fixedClientSimelationScroll",
+          "headRefOid": "232d4d961165593ec6a36d4a169f93ed145d3df4",
+          "headRepository": "142w57th/wts-systems",
+          "author": "Valovoy",
+          "createdAt": "2026-02-09T09:24:28Z",
+          "updatedAt": "2026-02-09T11:57:40Z"
+        }
+      ],
+      "hasDraftPr": true,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs",
+        "has_draft_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "chore/singup-token-guard",
+      "lastCommitSha": "e8cd61b6dc70b68fd2823a1e2d9ac8b7bb9b69e4",
+      "lastCommitDate": "2026-02-12T16:10:44Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/e8cd61b6dc70b68fd2823a1e2d9ac8b7bb9b69e4",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4814,
+          "title": "added: signup token guard for client signup linking apis",
+          "url": "https://github.com/142w57th/wts-systems/pull/4814",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "chore/singup-token-guard",
+          "headRefOid": "e8cd61b6dc70b68fd2823a1e2d9ac8b7bb9b69e4",
+          "headRepository": "142w57th/wts-systems",
+          "author": "gunvantsr",
+          "createdAt": "2026-02-12T16:11:27Z",
+          "updatedAt": "2026-02-12T16:16:25Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "dev_change_kafka_config",
+      "lastCommitSha": "8766380dcd5493e41231ae217688cd9eb224e62b",
+      "lastCommitDate": "2026-02-16T23:16:05Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/8766380dcd5493e41231ae217688cd9eb224e62b",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4856,
+          "title": "Dev: Update lambda Kafka config",
+          "url": "https://github.com/142w57th/wts-systems/pull/4856",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "dev_change_kafka_config",
+          "headRefOid": "8766380dcd5493e41231ae217688cd9eb224e62b",
+          "headRepository": "142w57th/wts-systems",
+          "author": "doppelc",
+          "createdAt": "2026-02-16T23:25:02Z",
+          "updatedAt": "2026-03-31T13:40:30Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "feat/delete-account-script",
+      "lastCommitSha": "2d2d578e6bb1c78ddf9bade93ad026951c62719d",
+      "lastCommitDate": "2026-01-29T14:00:01Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/2d2d578e6bb1c78ddf9bade93ad026951c62719d",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4509,
+          "title": "feat: clean delete account from db",
+          "url": "https://github.com/142w57th/wts-systems/pull/4509",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "feat/delete-account-script",
+          "headRefOid": "2d2d578e6bb1c78ddf9bade93ad026951c62719d",
+          "headRepository": "142w57th/wts-systems",
+          "author": "gunvantsr",
+          "createdAt": "2026-01-29T14:01:05Z",
+          "updatedAt": "2026-01-29T14:01:27Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "feat/dev-merge/br-onboarding-model",
+      "lastCommitSha": "a21ba77419f2085574a7825bc1792ac6c2a80a76",
+      "lastCommitDate": "2026-02-20T20:50:22Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/a21ba77419f2085574a7825bc1792ac6c2a80a76",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4873,
+          "title": "Feat/dev merge/br onboarding model",
+          "url": "https://github.com/142w57th/wts-systems/pull/4873",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "feat/dev-merge/br-onboarding-model",
+          "headRefOid": "a21ba77419f2085574a7825bc1792ac6c2a80a76",
+          "headRepository": "142w57th/wts-systems",
+          "author": "DanyloPillar",
+          "createdAt": "2026-02-17T22:50:00Z",
+          "updatedAt": "2026-02-20T20:55:13Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "fix/onboarding-dto-bug",
+      "lastCommitSha": "5f0e447c54015809749093e3f71d4226b476e351",
+      "lastCommitDate": "2026-01-09T13:08:31Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/5f0e447c54015809749093e3f71d4226b476e351",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4069,
+          "title": "wip: fixing dto related tech debt",
+          "url": "https://github.com/142w57th/wts-systems/pull/4069",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "fix/onboarding-dto-bug",
+          "headRefOid": "5f0e447c54015809749093e3f71d4226b476e351",
+          "headRepository": "142w57th/wts-systems",
+          "author": "vikramk9852",
+          "createdAt": "2026-01-09T13:14:26Z",
+          "updatedAt": "2026-01-09T13:14:55Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "merge-dev/pebble/org-eneity-no-request-scope",
+      "lastCommitSha": "3a575ada65a5670bdf6bdcb61320b24a34443092",
+      "lastCommitDate": "2026-01-11T16:01:47Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/3a575ada65a5670bdf6bdcb61320b24a34443092",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4122,
+          "title": "Refactor org entity service to be singleton scoped",
+          "url": "https://github.com/142w57th/wts-systems/pull/4122",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "merge-dev/pebble/org-eneity-no-request-scope",
+          "headRefOid": "3a575ada65a5670bdf6bdcb61320b24a34443092",
+          "headRepository": "142w57th/wts-systems",
+          "author": "prithweedas",
+          "createdAt": "2026-01-13T05:10:04Z",
+          "updatedAt": "2026-01-13T05:10:39Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "task/SOL-916",
+      "lastCommitSha": "b912dede23ac07065915e3965a66d19f3cb50255",
+      "lastCommitDate": "2026-01-28T17:38:28Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/b912dede23ac07065915e3965a66d19f3cb50255",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4481,
+          "title": "[SOL-916] Redirected old clients to new review page",
+          "url": "https://github.com/142w57th/wts-systems/pull/4481",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "task/SOL-916",
+          "headRefOid": "b912dede23ac07065915e3965a66d19f3cb50255",
+          "headRepository": "142w57th/wts-systems",
+          "author": "aryandev17",
+          "createdAt": "2026-01-28T17:38:58Z",
+          "updatedAt": "2026-01-28T17:39:57Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "task/account-advisor-mapping",
+      "lastCommitSha": "076441d3173d9e6219c7bd33ff461d80e719fb23",
+      "lastCommitDate": "2026-02-04T15:02:52Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/076441d3173d9e6219c7bd33ff461d80e719fb23",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4637,
+          "title": "Added advisor account mapping for onboarding",
+          "url": "https://github.com/142w57th/wts-systems/pull/4637",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "task/account-advisor-mapping",
+          "headRefOid": "076441d3173d9e6219c7bd33ff461d80e719fb23",
+          "headRepository": "142w57th/wts-systems",
+          "author": "aryandev17",
+          "createdAt": "2026-02-04T15:04:05Z",
+          "updatedAt": "2026-02-04T16:53:03Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "task/add-dd-traces-dev-merge",
+      "lastCommitSha": "049d7f4a7c3993fdc5a16a5cf5d9a95dab72f2ab",
+      "lastCommitDate": "2026-01-22T17:59:01Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/049d7f4a7c3993fdc5a16a5cf5d9a95dab72f2ab",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4350,
+          "title": "Task/add dd traces dev merge",
+          "url": "https://github.com/142w57th/wts-systems/pull/4350",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "task/add-dd-traces-dev-merge",
+          "headRefOid": "049d7f4a7c3993fdc5a16a5cf5d9a95dab72f2ab",
+          "headRepository": "142w57th/wts-systems",
+          "author": "aryandev17",
+          "createdAt": "2026-01-22T18:00:00Z",
+          "updatedAt": "2026-01-22T18:07:58Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "task/dynamic-onboarding-steps",
+      "lastCommitSha": "7be519d2f75f0d711986b3976e6620cb9bcd5a67",
+      "lastCommitDate": "2026-01-26T19:14:03Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/7be519d2f75f0d711986b3976e6620cb9bcd5a67",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4409,
+          "title": "[WIP] Conditional steps",
+          "url": "https://github.com/142w57th/wts-systems/pull/4409",
+          "state": "OPEN",
+          "isDraft": true,
+          "headRefName": "task/dynamic-onboarding-steps",
+          "headRefOid": "7be519d2f75f0d711986b3976e6620cb9bcd5a67",
+          "headRepository": "142w57th/wts-systems",
+          "author": "aryandev17",
+          "createdAt": "2026-01-26T19:14:33Z",
+          "updatedAt": "2026-05-23T10:52:09Z"
+        }
+      ],
+      "hasDraftPr": true,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs",
+        "has_draft_prs"
+      ],
+      "deleteEligible": false
+    }
+  ],
+  "staleBranchesSkipped": [
+    {
+      "name": "bug/SOL-29-fixFormValidation",
+      "lastCommitSha": "ad7271db295b5952d6ef7c8a74d04365d4cac844",
+      "lastCommitDate": "2026-02-04T12:14:09Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/ad7271db295b5952d6ef7c8a74d04365d4cac844",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4629,
+          "title": "[SOL-29]: fixed onboarding form validation",
+          "url": "https://github.com/142w57th/wts-systems/pull/4629",
+          "state": "OPEN",
+          "isDraft": true,
+          "headRefName": "bug/SOL-29-fixFormValidation",
+          "headRefOid": "ad7271db295b5952d6ef7c8a74d04365d4cac844",
+          "headRepository": "142w57th/wts-systems",
+          "author": "Valovoy",
+          "createdAt": "2026-02-04T12:14:36Z",
+          "updatedAt": "2026-02-04T12:15:02Z"
+        }
+      ],
+      "hasDraftPr": true,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs",
+        "has_draft_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "bug/SOL-952-fixedClientSimelationScroll",
+      "lastCommitSha": "232d4d961165593ec6a36d4a169f93ed145d3df4",
+      "lastCommitDate": "2026-02-09T11:56:49Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/232d4d961165593ec6a36d4a169f93ed145d3df4",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4717,
+          "title": "[SOL-952]: fixed client simulation scroll",
+          "url": "https://github.com/142w57th/wts-systems/pull/4717",
+          "state": "OPEN",
+          "isDraft": true,
+          "headRefName": "bug/SOL-952-fixedClientSimelationScroll",
+          "headRefOid": "232d4d961165593ec6a36d4a169f93ed145d3df4",
+          "headRepository": "142w57th/wts-systems",
+          "author": "Valovoy",
+          "createdAt": "2026-02-09T09:24:28Z",
+          "updatedAt": "2026-02-09T11:57:40Z"
+        }
+      ],
+      "hasDraftPr": true,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs",
+        "has_draft_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "chore/singup-token-guard",
+      "lastCommitSha": "e8cd61b6dc70b68fd2823a1e2d9ac8b7bb9b69e4",
+      "lastCommitDate": "2026-02-12T16:10:44Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/e8cd61b6dc70b68fd2823a1e2d9ac8b7bb9b69e4",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4814,
+          "title": "added: signup token guard for client signup linking apis",
+          "url": "https://github.com/142w57th/wts-systems/pull/4814",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "chore/singup-token-guard",
+          "headRefOid": "e8cd61b6dc70b68fd2823a1e2d9ac8b7bb9b69e4",
+          "headRepository": "142w57th/wts-systems",
+          "author": "gunvantsr",
+          "createdAt": "2026-02-12T16:11:27Z",
+          "updatedAt": "2026-02-12T16:16:25Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "dev_change_kafka_config",
+      "lastCommitSha": "8766380dcd5493e41231ae217688cd9eb224e62b",
+      "lastCommitDate": "2026-02-16T23:16:05Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/8766380dcd5493e41231ae217688cd9eb224e62b",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4856,
+          "title": "Dev: Update lambda Kafka config",
+          "url": "https://github.com/142w57th/wts-systems/pull/4856",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "dev_change_kafka_config",
+          "headRefOid": "8766380dcd5493e41231ae217688cd9eb224e62b",
+          "headRepository": "142w57th/wts-systems",
+          "author": "doppelc",
+          "createdAt": "2026-02-16T23:25:02Z",
+          "updatedAt": "2026-03-31T13:40:30Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "feat/delete-account-script",
+      "lastCommitSha": "2d2d578e6bb1c78ddf9bade93ad026951c62719d",
+      "lastCommitDate": "2026-01-29T14:00:01Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/2d2d578e6bb1c78ddf9bade93ad026951c62719d",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4509,
+          "title": "feat: clean delete account from db",
+          "url": "https://github.com/142w57th/wts-systems/pull/4509",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "feat/delete-account-script",
+          "headRefOid": "2d2d578e6bb1c78ddf9bade93ad026951c62719d",
+          "headRepository": "142w57th/wts-systems",
+          "author": "gunvantsr",
+          "createdAt": "2026-01-29T14:01:05Z",
+          "updatedAt": "2026-01-29T14:01:27Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "feat/dev-merge/br-onboarding-model",
+      "lastCommitSha": "a21ba77419f2085574a7825bc1792ac6c2a80a76",
+      "lastCommitDate": "2026-02-20T20:50:22Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/a21ba77419f2085574a7825bc1792ac6c2a80a76",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4873,
+          "title": "Feat/dev merge/br onboarding model",
+          "url": "https://github.com/142w57th/wts-systems/pull/4873",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "feat/dev-merge/br-onboarding-model",
+          "headRefOid": "a21ba77419f2085574a7825bc1792ac6c2a80a76",
+          "headRepository": "142w57th/wts-systems",
+          "author": "DanyloPillar",
+          "createdAt": "2026-02-17T22:50:00Z",
+          "updatedAt": "2026-02-20T20:55:13Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "fix/onboarding-dto-bug",
+      "lastCommitSha": "5f0e447c54015809749093e3f71d4226b476e351",
+      "lastCommitDate": "2026-01-09T13:08:31Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/5f0e447c54015809749093e3f71d4226b476e351",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4069,
+          "title": "wip: fixing dto related tech debt",
+          "url": "https://github.com/142w57th/wts-systems/pull/4069",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "fix/onboarding-dto-bug",
+          "headRefOid": "5f0e447c54015809749093e3f71d4226b476e351",
+          "headRepository": "142w57th/wts-systems",
+          "author": "vikramk9852",
+          "createdAt": "2026-01-09T13:14:26Z",
+          "updatedAt": "2026-01-09T13:14:55Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "merge-dev/pebble/org-eneity-no-request-scope",
+      "lastCommitSha": "3a575ada65a5670bdf6bdcb61320b24a34443092",
+      "lastCommitDate": "2026-01-11T16:01:47Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/3a575ada65a5670bdf6bdcb61320b24a34443092",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4122,
+          "title": "Refactor org entity service to be singleton scoped",
+          "url": "https://github.com/142w57th/wts-systems/pull/4122",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "merge-dev/pebble/org-eneity-no-request-scope",
+          "headRefOid": "3a575ada65a5670bdf6bdcb61320b24a34443092",
+          "headRepository": "142w57th/wts-systems",
+          "author": "prithweedas",
+          "createdAt": "2026-01-13T05:10:04Z",
+          "updatedAt": "2026-01-13T05:10:39Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "task/SOL-916",
+      "lastCommitSha": "b912dede23ac07065915e3965a66d19f3cb50255",
+      "lastCommitDate": "2026-01-28T17:38:28Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/b912dede23ac07065915e3965a66d19f3cb50255",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4481,
+          "title": "[SOL-916] Redirected old clients to new review page",
+          "url": "https://github.com/142w57th/wts-systems/pull/4481",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "task/SOL-916",
+          "headRefOid": "b912dede23ac07065915e3965a66d19f3cb50255",
+          "headRepository": "142w57th/wts-systems",
+          "author": "aryandev17",
+          "createdAt": "2026-01-28T17:38:58Z",
+          "updatedAt": "2026-01-28T17:39:57Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "task/account-advisor-mapping",
+      "lastCommitSha": "076441d3173d9e6219c7bd33ff461d80e719fb23",
+      "lastCommitDate": "2026-02-04T15:02:52Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/076441d3173d9e6219c7bd33ff461d80e719fb23",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4637,
+          "title": "Added advisor account mapping for onboarding",
+          "url": "https://github.com/142w57th/wts-systems/pull/4637",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "task/account-advisor-mapping",
+          "headRefOid": "076441d3173d9e6219c7bd33ff461d80e719fb23",
+          "headRepository": "142w57th/wts-systems",
+          "author": "aryandev17",
+          "createdAt": "2026-02-04T15:04:05Z",
+          "updatedAt": "2026-02-04T16:53:03Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "task/add-dd-traces-dev-merge",
+      "lastCommitSha": "049d7f4a7c3993fdc5a16a5cf5d9a95dab72f2ab",
+      "lastCommitDate": "2026-01-22T17:59:01Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/049d7f4a7c3993fdc5a16a5cf5d9a95dab72f2ab",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4350,
+          "title": "Task/add dd traces dev merge",
+          "url": "https://github.com/142w57th/wts-systems/pull/4350",
+          "state": "OPEN",
+          "isDraft": false,
+          "headRefName": "task/add-dd-traces-dev-merge",
+          "headRefOid": "049d7f4a7c3993fdc5a16a5cf5d9a95dab72f2ab",
+          "headRepository": "142w57th/wts-systems",
+          "author": "aryandev17",
+          "createdAt": "2026-01-22T18:00:00Z",
+          "updatedAt": "2026-01-22T18:07:58Z"
+        }
+      ],
+      "hasDraftPr": false,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs"
+      ],
+      "deleteEligible": false
+    },
+    {
+      "name": "task/dynamic-onboarding-steps",
+      "lastCommitSha": "7be519d2f75f0d711986b3976e6620cb9bcd5a67",
+      "lastCommitDate": "2026-01-26T19:14:03Z",
+      "lastCommitUrl": "https://github.com/142w57th/wts-systems/commit/7be519d2f75f0d711986b3976e6620cb9bcd5a67",
+      "isProtected": false,
+      "branchProtectionRule": null,
+      "openPrCount": 1,
+      "openPrs": [
+        {
+          "number": 4409,
+          "title": "[WIP] Conditional steps",
+          "url": "https://github.com/142w57th/wts-systems/pull/4409",
+          "state": "OPEN",
+          "isDraft": true,
+          "headRefName": "task/dynamic-onboarding-steps",
+          "headRefOid": "7be519d2f75f0d711986b3976e6620cb9bcd5a67",
+          "headRepository": "142w57th/wts-systems",
+          "author": "aryandev17",
+          "createdAt": "2026-01-26T19:14:33Z",
+          "updatedAt": "2026-05-23T10:52:09Z"
+        }
+      ],
+      "hasDraftPr": true,
+      "prDetectionMethod": "repository_pull_requests_by_head_ref",
+      "isDefaultBranch": false,
+      "isStale": true,
+      "skipReasons": [
+        "has_open_prs",
+        "has_draft_prs"
+      ],
+      "deleteEligible": false
+    }
+  ]
+}
