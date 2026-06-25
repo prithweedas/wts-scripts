@@ -17,7 +17,7 @@ const repo = args.repo;
 const mode = args.mode ?? "read";
 const months = Number(args.months ?? 3);
 const outputDir = args["output-dir"] ?? "branch-cleanup-runs";
-const prDetectionMethod = "repository_pull_requests_by_head_ref";
+const prDetectionMethod = "repository_pull_requests_by_head_and_base_ref";
 
 if (!token) {
   fail("GITHUB_TOKEN is required.");
@@ -122,6 +122,12 @@ async function main() {
       openPrCount: branch.openPrCount,
       openPrs: branch.openPrs,
       hasDraftPr: branch.hasDraftPr,
+      openHeadPrCount: branch.openHeadPrCount,
+      openHeadPrs: branch.openHeadPrs,
+      hasDraftHeadPr: branch.hasDraftHeadPr,
+      openBasePrCount: branch.openBasePrCount,
+      openBasePrs: branch.openBasePrs,
+      hasDraftBasePr: branch.hasDraftBasePr,
       prDetectionMethod: branch.prDetectionMethod,
       isDefaultBranch: branch.isDefaultBranch,
       isProtected: branch.isProtected,
@@ -327,6 +333,11 @@ async function listOpenPullRequests(owner, repo) {
             headRepository {
               nameWithOwner
             }
+            baseRefName
+            baseRefOid
+            baseRepository {
+              nameWithOwner
+            }
             author {
               login
             }
@@ -394,12 +405,20 @@ function classifyBranch(branch, defaultBranchName) {
     skipReasons.push("protected_branch");
   }
 
-  if (branch.openPrCount > 0) {
-    skipReasons.push("has_open_prs");
+  if (branch.openHeadPrCount > 0) {
+    skipReasons.push("has_open_head_prs");
   }
 
-  if (branch.hasDraftPr) {
-    skipReasons.push("has_draft_prs");
+  if (branch.openBasePrCount > 0) {
+    skipReasons.push("has_open_base_prs");
+  }
+
+  if (branch.hasDraftHeadPr) {
+    skipReasons.push("has_draft_head_prs");
+  }
+
+  if (branch.hasDraftBasePr) {
+    skipReasons.push("has_draft_base_prs");
   }
 
   return {
@@ -412,36 +431,48 @@ function classifyBranch(branch, defaultBranchName) {
 }
 
 function attachOpenPullRequests(branches, openPullRequests) {
-  const pullRequestsByBranch = buildPullRequestsByBranch(openPullRequests);
+  const pullRequestsByHeadBranch = buildPullRequestsByBranch(openPullRequests, "head");
+  const pullRequestsByBaseBranch = buildPullRequestsByBranch(openPullRequests, "base");
 
   return branches.map((branch) => {
     const branchKey = getBranchKey(owner, repo, branch.name);
-    const openPrs = pullRequestsByBranch.get(branchKey) ?? [];
-    const hasDraftPr = openPrs.some((pullRequest) => pullRequest.isDraft);
+    const openHeadPrs = pullRequestsByHeadBranch.get(branchKey) ?? [];
+    const openBasePrs = pullRequestsByBaseBranch.get(branchKey) ?? [];
+    const hasDraftHeadPr = openHeadPrs.some((pullRequest) => pullRequest.isDraft);
+    const hasDraftBasePr = openBasePrs.some((pullRequest) => pullRequest.isDraft);
 
     return {
       ...branch,
-      openPrCount: openPrs.length,
-      openPrs,
-      hasDraftPr,
+      openHeadPrCount: openHeadPrs.length,
+      openHeadPrs,
+      hasDraftHeadPr,
+      openBasePrCount: openBasePrs.length,
+      openBasePrs,
+      hasDraftBasePr,
+      openPrCount: openHeadPrs.length,
+      openPrs: openHeadPrs,
+      hasDraftPr: hasDraftHeadPr,
       prDetectionMethod,
     };
   });
 }
 
-function buildPullRequestsByBranch(openPullRequests) {
+function buildPullRequestsByBranch(openPullRequests, refType) {
   const pullRequestsByBranch = new Map();
 
   for (const pullRequest of openPullRequests) {
-    if (!pullRequest.headRepository || !pullRequest.headRefName) {
+    const repository = refType === "head"
+      ? pullRequest.headRepository
+      : pullRequest.baseRepository;
+    const refName = refType === "head"
+      ? pullRequest.headRefName
+      : pullRequest.baseRefName;
+
+    if (!repository || !refName) {
       continue;
     }
 
-    const branchKey = getBranchKey(
-      pullRequest.headRepository,
-      null,
-      pullRequest.headRefName,
-    );
+    const branchKey = getBranchKey(repository, null, refName);
     const existingPullRequests = pullRequestsByBranch.get(branchKey) ?? [];
     existingPullRequests.push(pullRequest);
     pullRequestsByBranch.set(branchKey, existingPullRequests);
@@ -460,6 +491,9 @@ function normalizePullRequest(pullRequest) {
     headRefName: pullRequest.headRefName,
     headRefOid: pullRequest.headRefOid,
     headRepository: pullRequest.headRepository?.nameWithOwner ?? null,
+    baseRefName: pullRequest.baseRefName,
+    baseRefOid: pullRequest.baseRefOid,
+    baseRepository: pullRequest.baseRepository?.nameWithOwner ?? null,
     author: pullRequest.author?.login ?? null,
     createdAt: pullRequest.createdAt,
     updatedAt: pullRequest.updatedAt,
@@ -495,12 +529,63 @@ async function executeDeletes(staleBranches) {
         openPrCount: branch.openPrCount,
         openPrs: branch.openPrs,
         hasDraftPr: branch.hasDraftPr,
+        openHeadPrCount: branch.openHeadPrCount,
+        openHeadPrs: branch.openHeadPrs,
+        hasDraftHeadPr: branch.hasDraftHeadPr,
+        openBasePrCount: branch.openBasePrCount,
+        openBasePrs: branch.openBasePrs,
+        hasDraftBasePr: branch.hasDraftBasePr,
         prDetectionMethod: branch.prDetectionMethod,
       });
 
       info("Skipped branch deletion", {
         branch: branch.name,
         reasons: branch.skipReasons,
+      });
+      continue;
+    }
+
+    let liveOpenPullRequests;
+
+    try {
+      liveOpenPullRequests = await listLiveOpenPullRequestsForBranch(branch.name);
+    } catch (error) {
+      stats.failed += 1;
+
+      await audit({
+        event: "branch_delete_live_open_pr_check_failed",
+        branch: branch.name,
+        lastCommitSha: branch.lastCommitSha,
+        error: serializeError(error),
+      });
+
+      errorLog("Failed live open PR check; branch was not deleted", {
+        branch: branch.name,
+        error: error.message,
+      });
+      continue;
+    }
+
+    if (liveOpenPullRequests.openAnyPrs.length > 0) {
+      stats.skipped += 1;
+
+      await audit({
+        event: "branch_delete_skipped_live_open_pr",
+        branch: branch.name,
+        lastCommitSha: branch.lastCommitSha,
+        openHeadPrCount: liveOpenPullRequests.openHeadPrs.length,
+        openHeadPrs: liveOpenPullRequests.openHeadPrs,
+        openBasePrCount: liveOpenPullRequests.openBasePrs.length,
+        openBasePrs: liveOpenPullRequests.openBasePrs,
+        openAnyPrCount: liveOpenPullRequests.openAnyPrs.length,
+        openAnyPrs: liveOpenPullRequests.openAnyPrs,
+        prDetectionMethod,
+      });
+
+      info("Skipped branch deletion after live open PR check", {
+        branch: branch.name,
+        openHeadPrCount: liveOpenPullRequests.openHeadPrs.length,
+        openBasePrCount: liveOpenPullRequests.openBasePrs.length,
       });
       continue;
     }
@@ -515,6 +600,12 @@ async function executeDeletes(staleBranches) {
       openPrCount: branch.openPrCount,
       openPrs: branch.openPrs,
       hasDraftPr: branch.hasDraftPr,
+      openHeadPrCount: branch.openHeadPrCount,
+      openHeadPrs: branch.openHeadPrs,
+      hasDraftHeadPr: branch.hasDraftHeadPr,
+      openBasePrCount: branch.openBasePrCount,
+      openBasePrs: branch.openBasePrs,
+      hasDraftBasePr: branch.hasDraftBasePr,
       prDetectionMethod: branch.prDetectionMethod,
     });
 
@@ -562,6 +653,57 @@ async function executeDeletes(staleBranches) {
   return stats;
 }
 
+async function listLiveOpenPullRequestsForBranch(branchName) {
+  const [openHeadPrs, openBasePrs] = await Promise.all([
+    octokit.paginate(octokit.rest.pulls.list, {
+      owner,
+      repo,
+      state: "open",
+      head: `${owner}:${branchName}`,
+      per_page: 100,
+    }),
+    octokit.paginate(octokit.rest.pulls.list, {
+      owner,
+      repo,
+      state: "open",
+      base: branchName,
+      per_page: 100,
+    }),
+  ]);
+  const normalizedHeadPrs = openHeadPrs.map(normalizeRestPullRequest);
+  const normalizedBasePrs = openBasePrs.map(normalizeRestPullRequest);
+  const openAnyPrsByNumber = new Map();
+
+  for (const pullRequest of [...normalizedHeadPrs, ...normalizedBasePrs]) {
+    openAnyPrsByNumber.set(pullRequest.number, pullRequest);
+  }
+
+  return {
+    openHeadPrs: normalizedHeadPrs,
+    openBasePrs: normalizedBasePrs,
+    openAnyPrs: [...openAnyPrsByNumber.values()],
+  };
+}
+
+function normalizeRestPullRequest(pullRequest) {
+  return {
+    number: pullRequest.number,
+    title: pullRequest.title,
+    url: pullRequest.html_url,
+    state: pullRequest.state,
+    isDraft: pullRequest.draft,
+    headRefName: pullRequest.head?.ref ?? null,
+    headRefOid: pullRequest.head?.sha ?? null,
+    headRepository: pullRequest.head?.repo?.full_name ?? null,
+    baseRefName: pullRequest.base?.ref ?? null,
+    baseRefOid: pullRequest.base?.sha ?? null,
+    baseRepository: pullRequest.base?.repo?.full_name ?? null,
+    author: pullRequest.user?.login ?? null,
+    createdAt: pullRequest.created_at,
+    updatedAt: pullRequest.updated_at,
+  };
+}
+
 function summarizeBranches(branches, staleBranches) {
   return {
     branchCount: branches.length,
@@ -570,6 +712,11 @@ function summarizeBranches(branches, staleBranches) {
     skippedCount: staleBranches.filter((branch) => !branch.deleteEligible).length,
     staleWithOpenPrCount: staleBranches.filter((branch) => branch.openPrCount > 0).length,
     staleWithDraftPrCount: staleBranches.filter((branch) => branch.hasDraftPr).length,
+    staleWithOpenHeadPrCount: staleBranches.filter((branch) => branch.openHeadPrCount > 0).length,
+    staleWithOpenBasePrCount: staleBranches.filter((branch) => branch.openBasePrCount > 0).length,
+    staleWithAnyOpenPrCount: staleBranches.filter(hasAnyOpenPullRequest).length,
+    staleWithDraftHeadPrCount: staleBranches.filter((branch) => branch.hasDraftHeadPr).length,
+    staleWithDraftBasePrCount: staleBranches.filter((branch) => branch.hasDraftBasePr).length,
   };
 }
 
@@ -580,9 +727,16 @@ function summarizeOpenPullRequests(openPullRequests) {
   };
 }
 
+function hasAnyOpenPullRequest(branch) {
+  return branch.openHeadPrCount > 0 || branch.openBasePrCount > 0;
+}
+
 function buildReport({ defaultBranchName, branches, staleBranches, openPullRequests }) {
   const deleteEligibleBranches = staleBranches.filter((branch) => branch.deleteEligible);
   const staleBranchesWithOpenPrs = staleBranches.filter((branch) => branch.openPrCount > 0);
+  const staleBranchesWithOpenHeadPrs = staleBranches.filter((branch) => branch.openHeadPrCount > 0);
+  const staleBranchesWithOpenBasePrs = staleBranches.filter((branch) => branch.openBasePrCount > 0);
+  const staleBranchesWithAnyOpenPrs = staleBranches.filter(hasAnyOpenPullRequest);
   const staleBranchesSkipped = staleBranches.filter((branch) => !branch.deleteEligible);
   const openPrCounts = summarizeOpenPullRequests(openPullRequests);
 
@@ -606,12 +760,20 @@ function buildReport({ defaultBranchName, branches, staleBranches, openPullReque
       staleBranchCount: staleBranches.length,
       staleBranchesWithOpenPrCount: staleBranchesWithOpenPrs.length,
       staleBranchesWithDraftPrCount: staleBranches.filter((branch) => branch.hasDraftPr).length,
+      staleBranchesWithOpenHeadPrCount: staleBranchesWithOpenHeadPrs.length,
+      staleBranchesWithOpenBasePrCount: staleBranchesWithOpenBasePrs.length,
+      staleBranchesWithAnyOpenPrCount: staleBranchesWithAnyOpenPrs.length,
+      staleBranchesWithDraftHeadPrCount: staleBranches.filter((branch) => branch.hasDraftHeadPr).length,
+      staleBranchesWithDraftBasePrCount: staleBranches.filter((branch) => branch.hasDraftBasePr).length,
       deleteEligibleCount: deleteEligibleBranches.length,
       skippedCount: staleBranchesSkipped.length,
     },
     staleBranches,
     deleteEligibleBranches,
     staleBranchesWithOpenPrs,
+    staleBranchesWithOpenHeadPrs,
+    staleBranchesWithOpenBasePrs,
+    staleBranchesWithAnyOpenPrs,
     staleBranchesSkipped,
   };
 }
@@ -640,6 +802,11 @@ function buildSummary({ defaultBranchName, staleBranches, openPullRequests, dele
       staleBranchCount: staleBranches.length,
       staleBranchesWithOpenPrCount: staleBranches.filter((branch) => branch.openPrCount > 0).length,
       staleBranchesWithDraftPrCount: staleBranches.filter((branch) => branch.hasDraftPr).length,
+      staleBranchesWithOpenHeadPrCount: staleBranches.filter((branch) => branch.openHeadPrCount > 0).length,
+      staleBranchesWithOpenBasePrCount: staleBranches.filter((branch) => branch.openBasePrCount > 0).length,
+      staleBranchesWithAnyOpenPrCount: staleBranches.filter(hasAnyOpenPullRequest).length,
+      staleBranchesWithDraftHeadPrCount: staleBranches.filter((branch) => branch.hasDraftHeadPr).length,
+      staleBranchesWithDraftBasePrCount: staleBranches.filter((branch) => branch.hasDraftBasePr).length,
       deleteEligibleCount: staleBranches.filter((branch) => branch.deleteEligible).length,
       skippedCount: staleBranches.filter((branch) => !branch.deleteEligible).length,
     },

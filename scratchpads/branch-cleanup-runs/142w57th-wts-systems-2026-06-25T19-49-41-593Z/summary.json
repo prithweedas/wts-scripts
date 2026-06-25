@@ -1,0 +1,37 @@
+{
+  "runId": "2026-06-25T19-49-41-593Z",
+  "owner": "142w57th",
+  "repo": "wts-systems",
+  "mode": "read",
+  "startedAt": "2026-06-25T19:49:41.594Z",
+  "completedAt": "2026-06-25T19:49:50.283Z",
+  "cutoffDate": "2026-03-25T19:49:41.594Z",
+  "months": 3,
+  "defaultBranchName": "dev",
+  "prDetectionMethod": "repository_pull_requests_by_head_and_base_ref",
+  "reportPath": "/Users/prithwee/Documents/scripts/scratchpads/branch-cleanup-runs/142w57th-wts-systems-2026-06-25T19-49-41-593Z/report.json",
+  "auditLogPath": "/Users/prithwee/Documents/scripts/scratchpads/branch-cleanup-runs/142w57th-wts-systems-2026-06-25T19-49-41-593Z/audit.jsonl",
+  "pullRequestScan": {
+    "prDetectionMethod": "repository_pull_requests_by_head_and_base_ref",
+    "openPrCount": 88,
+    "draftOpenPrCount": 21
+  },
+  "totals": {
+    "staleBranchCount": 27,
+    "staleBranchesWithOpenPrCount": 23,
+    "staleBranchesWithDraftPrCount": 6,
+    "staleBranchesWithOpenHeadPrCount": 23,
+    "staleBranchesWithOpenBasePrCount": 4,
+    "staleBranchesWithAnyOpenPrCount": 26,
+    "staleBranchesWithDraftHeadPrCount": 6,
+    "staleBranchesWithDraftBasePrCount": 1,
+    "deleteEligibleCount": 1,
+    "skippedCount": 26
+  },
+  "deleteStats": {
+    "attempted": 0,
+    "succeeded": 0,
+    "failed": 0,
+    "skipped": 0
+  }
+}
