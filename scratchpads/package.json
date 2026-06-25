@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "branch-cleanup": "node stale-branches.js",
+    "revive-pr-base-branches": "node revive-pr-base-branches.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

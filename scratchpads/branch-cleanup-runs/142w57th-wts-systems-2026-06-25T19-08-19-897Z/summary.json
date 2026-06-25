@@ -1,0 +1,32 @@
+{
+  "runId": "2026-06-25T19-08-19-897Z",
+  "owner": "142w57th",
+  "repo": "wts-systems",
+  "mode": "read",
+  "startedAt": "2026-06-25T19:08:19.898Z",
+  "completedAt": "2026-06-25T19:08:32.225Z",
+  "cutoffDate": "2026-04-25T19:08:19.898Z",
+  "months": 2,
+  "defaultBranchName": "dev",
+  "prDetectionMethod": "repository_pull_requests_by_head_ref",
+  "reportPath": "/Users/prithwee/Documents/scripts/scratchpads/branch-cleanup-runs/142w57th-wts-systems-2026-06-25T19-08-19-897Z/report.json",
+  "auditLogPath": "/Users/prithwee/Documents/scripts/scratchpads/branch-cleanup-runs/142w57th-wts-systems-2026-06-25T19-08-19-897Z/audit.jsonl",
+  "pullRequestScan": {
+    "prDetectionMethod": "repository_pull_requests_by_head_ref",
+    "openPrCount": 89,
+    "draftOpenPrCount": 21
+  },
+  "totals": {
+    "staleBranchCount": 713,
+    "staleBranchesWithOpenPrCount": 42,
+    "staleBranchesWithDraftPrCount": 8,
+    "deleteEligibleCount": 671,
+    "skippedCount": 42
+  },
+  "deleteStats": {
+    "attempted": 0,
+    "succeeded": 0,
+    "failed": 0,
+    "skipped": 0
+  }
+}
